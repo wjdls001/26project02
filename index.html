@@ -8,124 +8,587 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/fullpage.js@4.0.34/dist/fullpage.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-fp-anchor="s1">
-    <header class="site-header">
-      <a class="logo" href="#s1">로고</a>
-      <nav aria-label="주요 메뉴">
-        <ul>
-          <li><a href="#s1">회사소개</a></li>
-          <li><a href="#s2">제품소개</a></li>
-          <li><a href="#s3">온라인</a></li>
-          <li><a href="#s4">커뮤니티</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- 문서·레이어 순서: 상단 메뉴 → 드로어 → 본문(main). 히어로 등 페이지 헤더 역역보다 위에 표시 -->
+    <nav class="site-header" aria-label="펫팜 글로벌 내비게이션">
+      <div class="site-header-hover-stack">
+        <div class="site-header-hit" aria-hidden="true"></div>
+        <div class="site-header__dock">
+          <div class="site-header__pill">
+            <a class="logo" href="#s1">
+              <span class="visually-hidden">PET PHARM</span>
+              <span class="logo__icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="34"
+                  height="20"
+                  viewBox="0 0 34 20"
+                  fill="none"
+                >
+                  <defs>
+                    <linearGradient
+                      id="logo-cap-l"
+                      x1="4"
+                      y1="10"
+                      x2="16"
+                      y2="10"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#f8b8c8" />
+                      <stop offset="1" stop-color="#e56b86" />
+                    </linearGradient>
+                    <linearGradient
+                      id="logo-cap-r"
+                      x1="18"
+                      y1="10"
+                      x2="30"
+                      y2="10"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#a83d54" />
+                      <stop offset="1" stop-color="#6f1f34" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M17 4c-7.732 0-11 5.082-11 8s3.268 8 11 8 11-5.082 11-8-3.268-8-11-8Z"
+                    fill="none"
+                  />
+                  <rect
+                    x="3"
+                    y="3"
+                    width="14"
+                    height="14"
+                    rx="7"
+                    fill="url(#logo-cap-l)"
+                  />
+                  <rect
+                    x="17"
+                    y="3"
+                    width="14"
+                    height="14"
+                    rx="7"
+                    fill="url(#logo-cap-r)"
+                  />
+                  <line
+                    x1="17"
+                    y1="4"
+                    x2="17"
+                    y2="16"
+                    stroke="rgb(255 255 255 / 88%)"
+                    stroke-width="1.85"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <span class="logo__brand" aria-hidden="true">
+                <span class="logo__brand-pet">PET</span
+                ><span class="logo__brand-pharm">PHARM.</span>
+              </span>
+            </a>
+            <nav class="site-header__nav" aria-label="주요 메뉴">
+              <ul>
+                <li><a href="#s1">동물의약품</a></li>
+                <li><a href="#s2">약국찾기</a></li>
+                <li><a href="#s3">펫팜소개</a></li>
+              </ul>
+            </nav>
+            <div class="lang-switch" role="group" aria-label="언어 선택">
+              <span class="lang-switch__active" aria-current="true">KR</span>
+              <span class="lang-switch__sep" aria-hidden="true">|</span>
+              <a href="#" class="lang-switch__link lang-switch__link--muted"
+                >EN</a
+              >
+            </div>
+            <button
+              type="button"
+              class="mobile-menu-toggle"
+              id="mobile-menu-toggle"
+              aria-expanded="false"
+              aria-controls="site-drawer"
+              aria-label="메뉴 열기"
+            >
+              <span class="mobile-menu-toggle__bars" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      id="site-drawer"
+      class="site-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="메뉴"
+      aria-hidden="true"
+      tabindex="-1"
+      inert
+    >
+      <button
+        type="button"
+        class="site-drawer__backdrop"
+        aria-label="어두운 영역 클릭 시 메뉴 닫기"
+      ></button>
+      <div class="site-drawer__panel">
+        <button type="button" class="site-drawer__close" aria-label="메뉴 닫기">
+          <span class="site-drawer__close-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-drawer__nav" aria-label="주요 메뉴">
+          <ul>
+            <li><a href="#s1">동물의약품</a></li>
+            <li><a href="#s2">약국찾기</a></li>
+            <li><a href="#s3">펫팜소개</a></li>
+          </ul>
+        </nav>
+        <div
+          class="site-drawer__lang lang-switch"
+          role="group"
+          aria-label="언어 선택"
+        >
+          <span class="lang-switch__active" aria-current="true">KR</span>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="#" class="lang-switch__link lang-switch__link--muted">EN</a>
+        </div>
+      </div>
+    </div>
 
     <main id="fullpage">
-      <div class="section section-bg section-bg--01" aria-label="회사소개">
-        <div class="section-overlay">
-          <div class="section-copy">
-            <h2 class="section-heading section-anim-el">회사소개</h2>
-            <p class="section-lead section-anim-el section-anim-el--delay">
-              믿을 수 있는 파트너와 함께하는 새로운 여정입니다.
+      <div
+        class="section section-bg section-bg--01 section--hero-masthead"
+        aria-label="동물의약품"
+      >
+        <div class="section--hero-masthead__gradient" aria-hidden="true"></div>
+        <div class="section-overlay section-overlay--hero-masthead">
+          <div class="section-copy section-copy--hero-masthead">
+            <p class="hero-masthead__kicker section-anim-el">
+              우리동네 동물약국 펫팜
+            </p>
+            <h2
+              class="hero-masthead__title section-anim-el section-anim-el--delay"
+            >
+              PETPHARM.
+            </h2>
+          </div>
+          <a
+            class="hero-scroll-pill"
+            href="#s2"
+            aria-label="다음 화면으로 이동"
+          >
+            <span class="hero-scroll-pill__chevrons" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9.5 12 15l6-5.5M6 14.5 12 20l6-5.5"
+                  stroke="currentColor"
+                  stroke-width="1.85"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="hero-scroll-pill__label">SCROLL</span>
+          </a>
+        </div>
+      </div>
+      <div
+        class="section section-bg section-bg--02 section--pharm-typo"
+        aria-label="약국찾기"
+      >
+        <div class="section-overlay section-overlay--pharm-typo">
+          <div class="pharm-typo">
+            <p class="pharm-typo__line section-anim-el">
+              우리동네
+              <span class="pharm-typo__pill">
+                <img
+                  class="pharm-typo__pill-img"
+                  src="https://images.pexels.com/photos/6231862/pexels-photo-6231862.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  width="240"
+                  height="120"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="pharm-typo__pill-groove" aria-hidden="true"></span>
+              </span>
+              동물약국
+            </p>
+            <p class="pharm-typo__line section-anim-el section-anim-el--delay">
+              나와 가장 가까운
+              <span class="pharm-typo__pill">
+                <img
+                  class="pharm-typo__pill-img"
+                  src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  width="240"
+                  height="120"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="pharm-typo__pill-groove" aria-hidden="true"></span>
+              </span>
+              위치에서
+            </p>
+            <p
+              class="pharm-typo__line section-anim-el section-anim-el--delay-2"
+            >
+              탐색
+              <span class="pharm-typo__pill">
+                <img
+                  class="pharm-typo__pill-img"
+                  src="https://images.pexels.com/photos/4588015/pexels-photo-4588015.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  width="240"
+                  height="120"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="pharm-typo__pill-groove" aria-hidden="true"></span>
+              </span>
+              해보세요.
             </p>
           </div>
         </div>
       </div>
-      <div class="section section-bg section-bg--02" aria-label="제품소개">
-        <div class="section-overlay">
-          <div class="section-copy">
-            <h2 class="section-heading section-anim-el">제품소개</h2>
-            <p class="section-lead section-anim-el section-anim-el--delay">
-              생활에 스며드는 디자인과 실용적인 솔루션을 제안합니다.
-            </p>
+      <div
+        class="section section-bg section-bg--03 section--pharm-dual"
+        aria-label="펫팜소개"
+      >
+        <div class="section-overlay section-overlay--pharm-dual">
+          <div class="pharm-dual section-anim-el">
+            <a
+              class="pharm-dual__card pharm-dual__card--left"
+              href="sub02.html"
+            >
+              <div class="pharm-dual__scale">
+                <span
+                  class="pharm-dual__bg"
+                  style="
+                    background-image: url(&quot;https://images.pexels.com/photos/6231862/pexels-photo-6231862.jpeg?auto=compress&cs=tinysrgb&w=1400&quot;);
+                  "
+                ></span>
+                <span class="pharm-dual__scrim" aria-hidden="true"></span>
+                <span class="pharm-dual__veil" aria-hidden="true"></span>
+                <div class="pharm-dual__content">
+                  <p class="pharm-dual__kicker">
+                    동물약품은 어디서 사야 하나요?
+                  </p>
+                  <h2 class="pharm-dual__title">가까운 동물약국 찾기</h2>
+                  <span class="pharm-dual__cta">
+                    <span class="pharm-dual__cta-icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M7 17 17 7M9 7h8v8"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    동물약국 찾기
+                  </span>
+                </div>
+              </div>
+            </a>
+            <a
+              class="pharm-dual__card pharm-dual__card--right"
+              href="sub01.html"
+            >
+              <div class="pharm-dual__scale">
+                <span
+                  class="pharm-dual__bg"
+                  style="
+                    background-image: url(&quot;https://images.pexels.com/photos/7469215/pexels-photo-7469215.jpeg?auto=compress&cs=tinysrgb&w=1400&quot;);
+                  "
+                ></span>
+                <span class="pharm-dual__scrim" aria-hidden="true"></span>
+                <span class="pharm-dual__veil" aria-hidden="true"></span>
+                <div class="pharm-dual__content">
+                  <p class="pharm-dual__kicker">우리 아이에게 필요한 약은?</p>
+                  <h2 class="pharm-dual__title">동물의약품 찾기</h2>
+                  <span class="pharm-dual__cta">
+                    <span class="pharm-dual__cta-icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M7 17 17 7M9 7h8v8"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    제품 찾아보기
+                  </span>
+                </div>
+              </div>
+            </a>
           </div>
+          <a
+            class="hero-scroll-pill hero-scroll-pill--dual"
+            href="#s4"
+            aria-label="다음 화면으로 이동"
+          >
+            <span class="hero-scroll-pill__chevrons" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9.5 12 15l6-5.5M6 14.5 12 20l6-5.5"
+                  stroke="currentColor"
+                  stroke-width="1.85"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="hero-scroll-pill__label">SCROLL</span>
+          </a>
         </div>
       </div>
-      <div class="section section-bg section-bg--03" aria-label="온라인">
-        <div class="section-overlay">
-          <div class="section-copy">
-            <h2 class="section-heading section-anim-el">온라인</h2>
-            <p class="section-lead section-anim-el section-anim-el--delay">
-              웹 한 곳에서 빠르게 만나 보실 수 있습니다.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="section section-bg section-bg--04" aria-label="커뮤니티">
-        <div class="section-overlay">
-          <div class="section-copy">
-            <h2 class="section-heading section-anim-el">커뮤니티</h2>
-            <p class="section-lead section-anim-el section-anim-el--delay">
-              소통과 나눔이 더해지는 곳입니다.
-            </p>
+      <div
+        class="section section-bg section-bg--04 section--pet-intro fp-auto-height"
+        aria-label="펫팜 소개"
+      >
+        <div class="pet-intro__track">
+          <div class="pet-intro__sticky">
+            <div class="section-overlay section-overlay--pet-intro">
+              <div class="pet-intro">
+                <div class="pet-intro__visual">
+                  <div class="pet-intro__hero">
+                    <img
+                      class="pet-intro__hero-img"
+                      src="https://images.pexels.com/photos/6235236/pexels-photo-6235236.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                      width="700"
+                      height="900"
+                      alt="반려견과 함께하는 따뜻한 순간"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+                <div class="pet-intro__copy">
+                  <p class="pet-intro__lead section-anim-el">
+                    펫팜은 반려동물을 사랑하는 마음에서 시작해 전문성과 신뢰로
+                    완성된 동물약국 플랫폼입니다. 더 건강한 반려생활을 위해,
+                    올바른 제품과 정보를 연결합니다.
+                  </p>
+                  <a
+                    class="pet-intro__link section-anim-el section-anim-el--delay"
+                    href="sub03.html"
+                  >
+                    펫팜 소개 바로가기
+                    <span class="pet-intro__link-arrow" aria-hidden="true"
+                      >→</span
+                    >
+                  </a>
+                  <div
+                    class="pet-intro__thumb-wrap section-anim-el section-anim-el--delay-2"
+                  >
+                    <img
+                      class="pet-intro__thumb"
+                      src="https://images.pexels.com/photos/2820134/pexels-photo-2820134.jpeg?auto=compress&cs=tinysrgb&w=600"
+                      width="200"
+                      height="200"
+                      alt="고개를 든 반려견"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="hero-scroll-pill hero-scroll-pill--pet-intro"
+              href="#footer"
+              aria-label="다음 화면으로 이동"
+            >
+              <span class="hero-scroll-pill__chevrons" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9.5 12 15l6-5.5M6 14.5 12 20l6-5.5"
+                    stroke="currentColor"
+                    stroke-width="1.85"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="hero-scroll-pill__label">SCROLL</span>
+            </a>
           </div>
         </div>
       </div>
       <div class="section fp-auto-height page-footer-section" aria-label="푸터">
         <footer class="mega-footer">
           <div class="mega-footer-inner">
-            <div class="mega-footer-brand">
-              <p class="mega-footer-logo">로고</p>
-              <p class="mega-footer-company">홈페이지코리아</p>
-              <p class="mega-footer-meta">
-                대표: 홍길동 <span aria-hidden="true">|</span> 사업자등록번호:
-                107-88-55192
+            <div class="mega-footer-left">
+              <a href="#s1" class="mega-footer-logo-lockup">
+                <span class="mega-footer-logo-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="38"
+                    viewBox="0 0 32 38"
+                    fill="none"
+                  >
+                    <rect
+                      x="7"
+                      y="1"
+                      width="17"
+                      height="36"
+                      rx="8.5"
+                      ry="8.5"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                    />
+                    <line
+                      x1="15.5"
+                      y1="2.25"
+                      x2="15.5"
+                      y2="35.75"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="mega-footer-logo-text">
+                  <span class="mega-footer-logo-line">PET</span>
+                  <span class="mega-footer-logo-line">PHARM.</span>
+                </span>
+              </a>
+              <nav class="mega-footer-policies" aria-label="약관 및 정책">
+                <ul>
+                  <li>
+                    <a href="#">서비스 이용약관</a>
+                  </li>
+                  <li class="mega-footer-policies__sep" aria-hidden="true">
+                    |
+                  </li>
+                  <li>
+                    <a href="#">개인정보 처리방침</a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="mega-footer-meta mega-footer-meta--company">
+                (주)펫팜 주소: 경기도 성남시 수정구 청계산로4길 53(고등동)
+                대성빌딩 대표: 윤성한
               </p>
-              <p class="mega-footer-meta">
-                주소: 서울특별시 영등포구 경인로 775 에이스하이테크시티 2동
-                202호
+              <p class="mega-footer-meta mega-footer-meta--company">
+                사업자등록번호: 255-88-01441 통신판매업: 2021-성남수정-1243 FAX:
+                050-4233-8913
               </p>
-              <p class="mega-footer-meta">
-                문의:
-                <a href="mailto:sales@homepagekorea.com"
-                  >sales@homepagekorea.com</a
+              <p class="mega-footer-copy">
+                Copyright © 2026 PET PHARM. All rights reserved.
+              </p>
+            </div>
+            <div class="mega-footer-right">
+              <div class="mega-footer-social" aria-label="소셜 미디어 링크">
+                <a
+                  class="mega-footer-social-link"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="인스타그램"
                 >
-              </p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3.125"
+                      y="3.125"
+                      width="17.75"
+                      height="17.75"
+                      rx="4.75"
+                      ry="4.75"
+                      stroke="currentColor"
+                      stroke-width="1.65"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3.5"
+                      stroke="currentColor"
+                      stroke-width="1.65"
+                    />
+                    <circle cx="17" cy="7.25" r="1" fill="currentColor" />
+                  </svg>
+                </a>
+                <a class="mega-footer-social-link" href="#" aria-label="블로그">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M14.25 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-5Z"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14 4v5h6M8 13h8M8 17h8"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <nav class="mega-footer-sublinks" aria-label="푸터 메뉴">
+                <ul>
+                  <li><a href="#s1">동물의약품</a></li>
+                  <li class="mega-footer-sublinks__sep" aria-hidden="true">
+                    |
+                  </li>
+                  <li><a href="#s2">약국찾기</a></li>
+                  <li class="mega-footer-sublinks__sep" aria-hidden="true">
+                    |
+                  </li>
+                  <li><a href="#s3">펫팜소개</a></li>
+                </ul>
+              </nav>
             </div>
-            <div class="mega-footer-columns">
-              <nav class="mega-footer-col" aria-labelledby="mf-heading-01">
-                <h3 id="mf-heading-01" class="mega-footer-heading">회사소개</h3>
-                <ul>
-                  <li><a href="#">인사말</a></li>
-                  <li><a href="#">연혁</a></li>
-                  <li><a href="#">오시는 길</a></li>
-                </ul>
-              </nav>
-              <nav class="mega-footer-col" aria-labelledby="mf-heading-02">
-                <h3 id="mf-heading-02" class="mega-footer-heading">제품소개</h3>
-                <ul>
-                  <li><a href="#">대표 제품</a></li>
-                  <li><a href="#">기능 안내</a></li>
-                  <li><a href="#">도입 사례</a></li>
-                </ul>
-              </nav>
-              <nav class="mega-footer-col" aria-labelledby="mf-heading-03">
-                <h3 id="mf-heading-03" class="mega-footer-heading">
-                  온라인문의
-                </h3>
-                <ul>
-                  <li><a href="#">문의 접수</a></li>
-                  <li><a href="#">견적 요청</a></li>
-                  <li><a href="#">자주 묻는 질문</a></li>
-                </ul>
-              </nav>
-              <nav class="mega-footer-col" aria-labelledby="mf-heading-04">
-                <h3 id="mf-heading-04" class="mega-footer-heading">게시판</h3>
-                <ul>
-                  <li><a href="#">공지사항</a></li>
-                  <li><a href="#">자료실</a></li>
-                  <li><a href="#">블로그</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="mega-footer-bottom">
-            <p class="mega-footer-copy">
-              © 2026 HOMEPAGEKOREA. ALL RIGHTS RESERVED.
-            </p>
           </div>
         </footer>
       </div>
